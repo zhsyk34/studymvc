@@ -1,0 +1,22 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false">
+
+    <diskStore path="d://temp" />
+
+    <defaultCache eternal="false"
+                  maxEntriesLocalHeap="1000"
+                  overflowToDisk="false"
+                  diskPersistent="false"
+                  timeToIdleSeconds="3600"
+                  timeToLiveSeconds="3600"/>
+
+    <cache name="first"
+           eternal="false"
+           maxEntriesLocalHeap="200"
+           overflowToDisk="false"
+           diskPersistent="false"
+           timeToIdleSeconds="600"
+           statistics="true"
+           timeToLiveSeconds="600"/>
+</ehcache>

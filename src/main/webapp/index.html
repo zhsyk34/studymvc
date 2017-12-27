@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>$Title$</title>
+</head>
+<body>
+<a href="http://192.168.1.56:80/stores/13/range/week">测试地址</a>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    let link = "http://192.168.1.56:80/stores/13/range/week";
+    axios.get(link)
+        .then(r => console.log(r))
+        .catch(function (error) {
+            console.log(error);
+        });
+</script>
+</body>
+</html>
