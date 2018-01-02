@@ -94,57 +94,110 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <!--<version>${spring.version}</version>-->
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-            <!--<version>${spring.version}</version>-->
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <!--<version>${spring.version}</version>-->
-        </dependency>
-
+        <!--缓存支持-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
-
-        <!--<dependency>-->
-        <!--<groupId>org.eclipse.jetty</groupId>-->
-        <!--<artifactId>jetty-server</artifactId>-->
-        <!--<version>9.4.8.v20171121</version>-->
-        <!--</dependency>-->
         <dependency>
-            <groupId>org.eclipse.jetty</groupId>
-            <artifactId>jetty-servlet</artifactId>
-            <version>9.4.8.v20171121</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
         </dependency>
 
+        <!--缓存-->
+        <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+            <version>1.1.0</version>
+        </dependency>
         <dependency>
             <groupId>org.ehcache</groupId>
             <artifactId>ehcache</artifactId>
             <version>3.4.0</version>
         </dependency>
+        <!--老版本?-->
+        <!--<dependency>-->
+        <!--<groupId>net.sf.ehcache</groupId>-->
+        <!--<artifactId>ehcache</artifactId>-->
+        <!--<version>2.10.4</version>-->
+        <!--<exclusions>-->
+        <!--<exclusion>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>slf4j-api</artifactId>-->
+        <!--</exclusion>-->
+        <!--</exclusions>-->
+        <!--</dependency>-->
 
+        <!--工具-->
         <dependency>
-            <groupId>net.sf.ehcache</groupId>
-            <artifactId>ehcache</artifactId>
-            <version>2.10.4</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.6-jre</version>
         </dependency>
 
+        <!--参数校验-->
+        <!--
+        BeanValidationPostProcessor
+        MethodValidationPostProcessor
+        -->
         <dependency>
-            <groupId>javax.cache</groupId>
-            <artifactId>cache-api</artifactId>
-            <version>1.1.0</version>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
+        <!--http://hibernate.org/validator/documentation/getting-started/-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.7.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+            <version>3.0.1-b08</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.hibernate</groupId>-->
+        <!--<artifactId>hibernate-validator-cdi</artifactId>-->
+        <!--<version>6.0.7.Final</version>-->
+        <!--</dependency>-->
+
+        <!--JSR-330-->
+        <!--<dependency>-->
+        <!--<groupId>javax.inject</groupId>-->
+        <!--<artifactId>javax.inject</artifactId>-->
+        <!--<version>1</version>-->
+        <!--</dependency>-->
+
+        <!--websocket-->
+        <dependency>
+            <groupId>javax.websocket</groupId>
+            <artifactId>javax.websocket-api</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <!--jms-->
+        <dependency>
+            <groupId>javax.jms</groupId>
+            <artifactId>javax.jms-api</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.activemq</groupId>
+            <artifactId>activemq-all</artifactId>
+            <version>5.15.2</version>
+        </dependency>
+
+        <!--容器-->
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-servlet</artifactId>
+            <version>9.4.8.v20171121</version>
         </dependency>
     </dependencies>
 
@@ -188,25 +241,7 @@
                         </goals>
                     </execution>
                 </executions>
-
             </plugin>
-            <!--<plugin>-->
-            <!--<groupId>org.eclipse.jetty</groupId>-->
-            <!--<artifactId>jetty-maven-plugin</artifactId>-->
-            <!--<version>${jetty.version}</version>-->
-            <!--<configuration>-->
-            <!--<scanIntervalSeconds>10</scanIntervalSeconds>-->
-            <!--<webApp>-->
-            <!--<contextPath>/</contextPath>-->
-            <!--<webInfIncludeJarPattern>.*/^(asm-all-repackaged)[^/]*\.jar$</webInfIncludeJarPattern>-->
-            <!--</webApp>-->
-            <!--<httpConnector>-->
-            <!--<port>8080</port>-->
-            <!--</httpConnector>-->
-            <!--&lt;!&ndash;Close jetty Automatic deployment and spring-loaded conflict &ndash;&gt;-->
-            <!--<reload>manual</reload>-->
-            <!--</configuration>-->
-            <!--</plugin>-->
         </plugins>
     </build>
 </project>

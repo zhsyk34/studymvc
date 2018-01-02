@@ -1,7 +1,6 @@
 package com.cat.service;
 
 import com.cat.bean.User;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.cache.annotation.CacheResult;
