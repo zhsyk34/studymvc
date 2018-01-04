@@ -202,6 +202,7 @@
     </dependencies>
 
     <!--mvn jetty:run-->
+    <!--https://www.eclipse.org/jetty/documentation/9.4.x/jetty-maven-plugin.html#get-up-and-running-->
     <build>
         <plugins>
             <plugin>
@@ -210,37 +211,37 @@
                 <version>${jetty.version}</version>
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <stopKey>foo</stopKey>
+                    <!--<stopKey>foo</stopKey>-->
                     <stopPort>9999</stopPort>
 
-                    <webApp>
-                        <!--<contextPath>/test</contextPath>-->
-                    </webApp>
+                    <!--<webApp>-->
+                    <!--<contextPath>/webapp</contextPath>-->
+                    <!--</webApp>-->
 
                     <httpConnector>
                         <port>8888</port>
                     </httpConnector>
                 </configuration>
 
-                <executions>
-                    <execution>
-                        <id>start-jetty</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>start</goal>
-                        </goals>
-                        <configuration>
-                            <scanIntervalSeconds>0</scanIntervalSeconds>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>stop-jetty</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>stop</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <!--<executions>-->
+                <!--<execution>-->
+                <!--<id>start-jetty</id>-->
+                <!--<phase>pre-integration-test</phase>-->
+                <!--<goals>-->
+                <!--<goal>start</goal>-->
+                <!--</goals>-->
+                <!--<configuration>-->
+                <!--<scanIntervalSeconds>0</scanIntervalSeconds>-->
+                <!--</configuration>-->
+                <!--</execution>-->
+                <!--<execution>-->
+                <!--<id>stop-jetty</id>-->
+                <!--<phase>post-integration-test</phase>-->
+                <!--<goals>-->
+                <!--<goal>stop</goal>-->
+                <!--</goals>-->
+                <!--</execution>-->
+                <!--</executions>-->
             </plugin>
         </plugins>
     </build>
